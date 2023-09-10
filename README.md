@@ -2,66 +2,66 @@
 
 # Next.js Commerce
 
-A Next.js 13 and App Router-ready ecommerce template featuring:
+Next.js 13とApp Routerに対応したeコマーステンプレートで、次の機能があります。
 
 - Next.js App Router
-- Optimized for SEO using Next.js's Metadata
-- React Server Components (RSCs) and Suspense
-- Server Actions for mutations
+- Next.jsのメタデータを使用した最適化されたSEO
+- React Server Components（RSC）とSuspense
+- ミューテーションのためのサーバーアクション
 - Edge Runtime
-- New fetching and caching paradigms
-- Dynamic OG images
-- Styling with Tailwind CSS
-- Checkout and payments with Shopify
-- Automatic light/dark mode based on system settings
+- 新しいフェッチとキャッシュのパラダイム
+- 動的OG画像
+- Tailwind CSSでのスタイリング
+- Shopifyでのチェックアウトと支払い
+- システム設定に基づく自動ライト/ダークモード
 
 <h3 id="v1-note"></h3>
 
-> Note: Looking for Next.js Commerce v1? View the [code](https://github.com/vercel/commerce/tree/v1), [demo](https://commerce-v1.vercel.store), and [release notes](https://github.com/vercel/commerce/releases/tag/v1).
+> 注意：Next.js Commerce v1をお探しですか？[コード](https://github.com/vercel/commerce/tree/v1)、[デモ](https://commerce-v1.vercel.store)、および[リリースノート](https://github.com/vercel/commerce/releases/tag/v1)をご覧ください。
 
-## Providers
+## プロバイダー
 
-Vercel will only be actively maintaining a Shopify version [as outlined in our vision and strategy for Next.js Commerce](https://github.com/vercel/commerce/pull/966).
+Vercelは、Next.js Commerceのビジョンと戦略で説明されているように、Shopifyバージョンのみを積極的にメンテナンスします。
 
-Vercel is happy to partner and work with any commerce provider to help them get a similar template up and running and listed below. Alternative providers should be able to fork this repository and swap out the `lib/shopify` file with their own implementation while leaving the rest of the template mostly unchanged.
+代替プロバイダーは、`lib/shopify`ファイルを自分自身の実装に置き換えながら、テンプレートの残りの部分をほとんど変更せずに、このリポジトリをフォークできるはずです。
 
-- Shopify (this repository)
-- [BigCommerce](https://github.com/bigcommerce/nextjs-commerce) ([Demo](https://next-commerce-v2.vercel.app/))
-- [Medusa](https://github.com/medusajs/vercel-commerce) ([Demo](https://medusa-nextjs-commerce.vercel.app/))
-- [Saleor](https://github.com/saleor/nextjs-commerce) ([Demo](https://saleor-commerce.vercel.app/))
-- [Shopware](https://github.com/shopwareLabs/vercel-commerce) ([Demo](https://shopware-vercel-commerce-react.vercel.app/))
-- [Swell](https://github.com/swellstores/verswell-commerce) ([Demo](https://verswell-commerce.vercel.app/))
-- [Umbraco](https://github.com/umbraco/Umbraco.VercelCommerce.Demo) ([Demo](https://vercel-commerce-demo.umbraco.com/))
+- Shopify（このリポジトリ）
+- [BigCommerce](https://github.com/bigcommerce/nextjs-commerce)（[デモ](https://next-commerce-v2.vercel.app/)）
+- [Medusa](https://github.com/medusajs/vercel-commerce)（[デモ](https://medusa-nextjs-commerce.vercel.app/)）
+- [Saleor](https://github.com/saleor/nextjs-commerce)（[デモ](https://saleor-commerce.vercel.app/)）
+- [Shopware](https://github.com/shopwareLabs/vercel-commerce)（[デモ](https://shopware-vercel-commerce-react.vercel.app/)）
+- [Swell](https://github.com/swellstores/verswell-commerce)（[デモ](https://verswell-commerce.vercel.app/)）
+- [Umbraco](https://github.com/umbraco/Umbraco.VercelCommerce.Demo)（[デモ](https://vercel-commerce-demo.umbraco.com/)）
 
-> Note: Providers, if you are looking to use similar products for your demo, you can [download these assets](https://drive.google.com/file/d/1q_bKerjrwZgHwCw0ovfUMW6He9VtepO_/view?usp=sharing).
+> 注意：プロバイダーの方々、デモで同様の製品を使用したい場合は、[これらのアセット](https://drive.google.com/file/d/1q_bKerjrwZgHwCw0ovfUMW6He9VtepO_/view?usp=sharing)をダウンロードできます。
 
-## Running locally
+## ローカルで実行する
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js Commerce. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+Next.js Commerceを実行するには、[`.env.example`で定義された環境変数](.env.example)を使用する必要があります。これには[Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables)を使用することをお勧めしますが、`.env`ファイルが必要です。
 
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control your Shopify store.
+> 注意：`.env`ファイルをコミットしないでください。そうすると、他の人がShopifyストアを制御できる秘密が漏れてしまいます。
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+1. Vercel CLIをインストールします：`npm i -g vercel`
+2. ローカルインスタンスをVercelとGitHubアカウントにリンクします（`.vercel`ディレクトリが作成されます）：`vercel link`
+3. 環境変数をダウンロードします：`vercel env pull`
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Your app should now be running on [localhost:3000](http://localhost:3000/).
+アプリはlocalhost:3000で実行されるはずです。
 
 <details>
   <summary>Expand if you work at Vercel and want to run locally and / or contribute</summary>
 
-1. Run `vc link`.
-1. Select the `Vercel Solutions` scope.
-1. Connect to the existing `commerce-shopify` project.
-1. Run `vc env pull` to get environment variables.
-1. Run `pmpm dev` to ensure everything is working correctly.
+1. vc linkを実行します。
+1. Vercel Solutionsスコープを選択します。
+1. 既存のcommerce-shopifyプロジェクトに接続します。
+1. 環境変数を取得するには、vc env pullを実行します。
+1. すべてが正常に動作していることを確認するには、pmpm devを実行します。
 </details>
 
-## Vercel, Next.js Commerce, and Shopify Integration Guide
+## Vercel、Next.js Commerce、およびShopifyの統合ガイド
 
-You can use this comprehensive [integration guide](http://vercel.com/docs/integrations/shopify) with step-by-step instructions on how to configure Shopify as a headless CMS using Next.js Commerce as your headless Shopify storefront on Vercel.
+この包括的な統合ガイドを使用して、Vercel上でヘッドレスShopify CMSとしてShopifyを構成し、Next.js CommerceをヘッドレスShopifyストアフロントとして使用できます
